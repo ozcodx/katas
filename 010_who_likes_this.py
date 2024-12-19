@@ -11,3 +11,18 @@ Implement the function which takes an array containing the names of people that 
 
 Note: For 4 or more names, the number in "and 2 others" simply increases.
 """
+
+def likes(names):
+    l = len(names)
+    r = ""
+    if l >= 4:
+        r = f"{names[0]}, {names[1]} and {l-2} others like this"
+    elif l == 3:
+        r= f"{names[0]}, {names[1]} and {names[2]} like this"
+    elif l == 2:
+        r= f"{names[0]} and {names[1]} like this"
+    elif l == 1:
+        r= f"{names[0]} likes this"
+    else:
+        r = "no one likes this"
+    return r
