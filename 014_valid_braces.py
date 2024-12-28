@@ -14,23 +14,9 @@ A string of braces is considered valid if all braces are matched with the
 correct brac
 """
 
-def valid_braces(string):
-    par = 0
-    llv = 0
-    cor = 0
-    for char in string:
-        if char == "(":
-            par = par + 1
-        elif char == "[":
-            llv = llv + 1
-        elif char == "{":
-            cor = cor + 1
-        elif char == ")":
-            par = par - 1
-        elif char == "]":
-            llv = llv - 1
-        elif char == "}":
-            cor = cor - 1
-        if par < 1 and llv < 1 and cor < 1:
-            return false
-    return (par == 0 and llv == 0 and cor == 0)
+def validBraces(s):
+    pairs = ['{}', '()', '[]']
+    while any(pair in s for pair in pairs):
+        for pair in pairs: 
+            s = s.replace(pair, "")
+    return s == ""
